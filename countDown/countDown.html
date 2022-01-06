@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时</title>
+    <script src="countDown.js"></script>
+</head>
+
+<body>
+    <style>
+        .countDown {
+            background-color: red;
+            height: 400px;
+            width: 300px;
+        }
+        
+        .hour,
+        .minute,
+        .second {
+            position: relative;
+            float: left;
+            background-color: #333;
+            height: 40px;
+            width: 40px;
+            margin-left: 10px;
+            margin-top: 150px;
+            left: 70px;
+            line-height: 40px;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .tips,
+        .tips2 {
+            color: white;
+            font-size: 24px;
+            position: relative;
+            left: 38%;
+            top: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .tips2 {
+            top: 80px;
+            left: 28px;
+            font-size: 30px;
+        }
+    </style>
+    <div class="countDown">
+        <div class="tips">倒计时</div>
+        <div class="tips2">本场距离结束还有</div>
+        <span class="hour"></span>
+        <span class="minute"></span>
+        <span class="second"></span>
+    </div>
+    <script>
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        console.log(hour);
+        var inputTime = +new Date('2022-01-06 18:50');
+        // var date1 = new Date('2022-01-07 16:50'); // 上述+new Date方法与该行结果一样，两种做法
+        // console.log(date1.valueOf());
+        console.log(inputTime);
+        countDown(); // 若不加此行，则打开页面时不会立即出现正确的倒计时，会出现span中的内容
+        setInterval(countDown, 1000); // setInterval(调用函数，延时时间)
+        // 截止时间
+    </script>
+</body>
+
+
+</html>
