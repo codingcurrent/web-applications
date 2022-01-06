@@ -1,0 +1,120 @@
+/* 清除元素默认的内外边距 */
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+
+/* 让所有斜体 不倾斜 */
+
+em,
+i {
+    font-style: normal;
+}
+
+
+/* 去掉li前面的小点 */
+
+li {
+    list-style: none;
+}
+
+
+/* 图片没有边框 去掉图片底侧的空白缝隙 */
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+
+/* 取消链接的下划线 */
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+
+/* 版心 */
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: pink;
+}
+
+.focus {
+    position: relative;
+    width: 520px;
+    height: 280px;
+    margin-left: 320px;
+    background-color: purple;
+    overflow: hidden;
+}
+
+
+/* 左右箭头 */
+
+.arrow-l,
+.arrow-r {
+    /* 鼠标未经过时隐藏 */
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    width: 24px;
+    height: 40px;
+    background: rgba(0, 0, 0, .3);
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+    z-index: 1;
+    /* 此处因为父亲focus也是定位，有层级显示关系加上z-index */
+}
+
+.arrow-r {
+    right: 0;
+}
+
+.focus ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600%;
+}
+
+.focus ul li {
+    float: left;
+}
+
+
+/* 轮播图的小圆圈 */
+
+.circle {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -16.5px;
+}
+
+.circle li {
+    float: left;
+    width: 8px;
+    height: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    margin: 0 3px;
+    border-radius: 50%;
+    cursor: pointer;
+    /* 鼠标经过显示为手形状 */
+    z-index: 100;
+}
+
+
+/* 当前选中的小圆圈 */
+
+.current {
+    background-color: #fff;
+}
