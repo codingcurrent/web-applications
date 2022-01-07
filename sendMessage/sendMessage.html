@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击按钮后，间隔60秒之内不能再次点击，防止重复发送短信</title>
+</head>
+
+<body>
+    <input class="tips" value="请输入电话号码"></input>
+    <button style="position: relative;left: 50%;margin-left: 10px">发送</button>
+
+    <style>
+        .tips,
+        button {
+            position: relative;
+            left: 50%;
+            top: 10px;
+        }
+        
+        .tips {
+            margin-left: -60px;
+            color: #ccc;
+            border: #333;
+            border: 1px solid black;
+            height: 20px;
+            width: 120px;
+        }
+        
+        button {
+            margin-left: 10px;
+            width: 90px;
+            height: 22px;
+            font-size: 14px;
+            color: white;
+            background-color: red;
+            border-style: none;
+            line-height: 22px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <script>
+        var tips = document.querySelector('.tips');
+        var button = document.querySelector('button');
+        var time = 60;
+        button.addEventListener('click', function() {
+            console.log(tips, button);
+            button.disabled = true;
+            var timer = setInterval(function() {
+                if (time === 0) {
+                    clearInterval(time);
+                    button.disabled = false;
+                    button.innerHTML = '发送';
+                    time = 10;
+                } else {
+                    button.innerHTML = '还剩下' + time + '秒';
+                    time--;
+                }
+            }, 1000)
+        })
+    </script>
+</body>
+
+</html>
